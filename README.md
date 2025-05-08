@@ -115,6 +115,18 @@ sealed-secret-rotator [flags]
 - `--verbose`: Enables detailed output (default: `false`).
 
 ### Example
+
+- Basic Usage
+
+```bash
+sealedsecret-rotator
+```
+
+![SealedSecret Rotator Basic Usage Output](assets/tool-output-video.mp4)
+
+
+- Verbose Usage
+
 ```bash
 sealedsecret-rotator --controller-name sealed-secrets --controller-namespace kube-system --verbose
 ```
