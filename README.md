@@ -69,7 +69,7 @@ This is the directory structure of the SealedSecret Rotator project:
 - `cmd/`: Contains the main entry point for the application.
     - `sealed-secrets-rotator.go`: The Go file that contains the logic for the SealedSecret Rotator.
 - `go.mod`: Go module file that defines the module and its dependencies.
-= `go.sum`: Contains cryptographic checksums for dependencies to ensure their integrity and authenticity in a Go project.
+- `go.sum`: Contains cryptographic checksums for dependencies to ensure their integrity and authenticity in a Go project.
 - `Makefile`: A file with commands to build, clean, and install the project. 
 - `README.md`: The markdown file that provides an overview of the project and how to use it.
 
