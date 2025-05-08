@@ -1,3 +1,5 @@
+<img src="assets/logo.png" alt="SealedSecret Rotator Logo" width="600"/>
+
 # SealedSecret Rotator
 
 A command-line tool to automate the re-encryption of Kubernetes SealedSecrets after key rotation, built as an extension to the Bitnami `kubeseal` CLI. This project was developed as part of the Instabug Infrastructure Internship Task 2025.
