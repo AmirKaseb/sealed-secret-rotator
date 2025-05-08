@@ -1,0 +1,44 @@
+# Go binaries
+/bin/
+/obj/
+/*.exe
+/*.out
+/*.test
+
+# Go build directories
+/build/
+
+# Dependency directories
+/vendor/
+
+# Go specific configuration files
+.golangci.yml
+
+# Test result files
+*.test
+
+# IDE or editor files
+.idea/
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Dependency lock files
+go.sum
+
+# Cached files
+*.swp
+*.swo
+
+# Kubernetes secrets (if you want to ignore temporary files related to secrets)
+*.pem
+*.yaml
+
+# Any sensitive files like keys (if not in a secure vault)
+*.key
+*.crt
