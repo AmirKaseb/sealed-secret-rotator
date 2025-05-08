@@ -6,7 +6,8 @@ A command-line tool to automate the re-encryption of Kubernetes SealedSecrets af
 
 The SealedSecret Rotator automates the process of re-encrypting SealedSecret objects in a Kubernetes cluster, addressing the manual effort required after the default 30-day key rotation of the Bitnami SealedSecrets controller. It ensures secrets remain secure and accessible to applications while supporting scalability, security, and logging enhancements.
 
-**Note**: The detailed plan of action for implementing the SealedSecret Rotator is provided at the end of this README for comprehensive context after understanding usage and implementation details.
+> 💡 **Important:**  
+> You'll find a step-by-step **plan of action** for using the SealedSecret Rotator **at the end of this README**. It's designed to provide deeper context *after* you're familiar with its usage and how it works.
 
 ## Table of Contents
 - [Features](#features)
@@ -87,22 +88,12 @@ To install the SealedSecret Rotator, follow these steps:
     cd sealed-secret-rotator
     ```
 
-3.  **Build the Binary**:
+3.  **Install to /usr/local/bin**:
     ```bash
-    make build
+    make install
     ```
 
-4.  **Verify Build**:
-    ```bash
-    ./sealedsecret-rotator --help
-    ```
-
-5.  **Install to /usr/local/bin**:
-    ```bash
-    sudo make install
-    ```
-
-6.  **Verify Installation**:
+4.  **Verify Installation**:
     ```bash
     sealedsecret-rotator --help
     ```
