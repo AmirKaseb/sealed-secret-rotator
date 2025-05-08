@@ -122,7 +122,7 @@ sealed-secret-rotator [flags]
 sealedsecret-rotator
 ```
 
-![SealedSecret Rotator Basic Usage Output](assets/tool-output-video.mp4)
+[![SealedSecret Rotator Basic Usage](assets/thumbnail.png)](assets/tool-output-video.mp4)
 
 
 - Verbose Usage
