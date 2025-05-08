@@ -224,7 +224,8 @@ This processes all SealedSecrets in the cluster with verbose output.
 
 Planned enhancements for the next version include:
 
-- **JSON Logging**: Structured logging for ELK/EFK, writing to `/var/log/sealedsecret-rotator.log` and stdout.
+- **JSON Logging**: Structured logging for ELK/EFK, writing to `/var/log/sealedsecret-rotator.log` and stdout , So It can be integrated with ELK , EFK Stack and for CI/CD Pipelines. 
+
   ```json
   {
     "timestamp": "2025-05-08T12:00:00Z",
