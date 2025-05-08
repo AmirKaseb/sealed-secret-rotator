@@ -63,6 +63,7 @@ Bitnami's SealedSecrets controller encrypts Kubernetes secrets using a public ke
 ├── go.mod
 ├── go.sum
 ├── Makefile
+├── Dockerfile
 └── README.md
 ```
 
@@ -73,7 +74,8 @@ This is the directory structure of the SealedSecret Rotator project:
     - `sealed-secrets-rotator.go`: The Go file that contains the logic for the SealedSecret Rotator.
 - `go.mod`: Go module file that defines the module and its dependencies.
 - `go.sum`: Contains cryptographic checksums for dependencies to ensure their integrity and authenticity in a Go project.
-- `Makefile`: A file with commands to build, clean, and install the project. 
+- `Makefile`: A file with commands to build, clean, and install the project.
+- `Dockerfile`: The Dockerfile contains instructions to build the application, create the executable binary, and install it into a minimal Docker image for easy deployment.
 - `README.md`: The markdown file that provides an overview of the project and how to use it.
 
 
