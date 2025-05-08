@@ -80,26 +80,48 @@ This is the directory structure of the SealedSecret Rotator project:
 
 To install the SealedSecret Rotator, follow these steps:
 
-1.  **Prerequisites**:
-    * Go (version 1.16 or later)
-    * `kubectl` configured with cluster access
-    * `kubeseal` CLI installed
+### Option 1: Local Installation
 
-2.  **Clone the Repository**:
-    ```bash
-    git clone https://github.com/amirkasseb/sealed-secret-rotator.git
-    cd sealed-secret-rotator
-    ```
+1. **Prerequisites**:
+   * Go (version 1.16 or later)
+   * `kubectl` configured with cluster access
+   * `kubeseal` CLI installed
 
-3.  **Install to /usr/local/bin**:
-    ```bash
-    make install
-    ```
+2. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/amirkasseb/sealed-secret-rotator.git
+   cd sealed-secret-rotator
+   ```
 
-4.  **Verify Installation**:
-    ```bash
-    sealedsecret-rotator --help
-    ```
+3. **Install to /usr/local/bin**:
+   ```bash
+   make install
+   ```
+
+4. **Verify Installation**:
+   ```bash
+   sealedsecret-rotator --help
+   ```
+
+### Option 2: Docker Installation
+
+If you prefer using Docker to run the SealedSecret Rotator without installing any dependencies locally, you can build and run the Docker container as follows:
+
+1. **Build the Docker Image**:
+   ```bash
+   docker build -t sealed-secrets-rotator .
+   ```
+
+2. **Run the Docker Container**:
+   ```bash
+   docker run --rm -it \
+     --network host \
+     -v $HOME/.kube/config:/root/.kube/config \
+     -v $HOME/.minikube:/home/amirkasseb/.minikube \
+     sealed-secrets-rotator
+   ```
+
+This will start the SealedSecret Rotator in a Docker container, allowing you to interact with it without needing to install kubectl or kubeseal locally.
 
 ## Usage
 
@@ -135,6 +157,14 @@ sealedsecret-rotator --controller-name sealed-secrets --controller-namespace kub
 ![SealedSecret Rotator Output](assets/tool-output.png)
 
 This processes all SealedSecrets in the cluster with verbose output.
+
+- Docker Usage 
+```bash
+docker run --rm -it   --network host   -v $HOME/.kube/config:/root/.kube/config   -v $HOME/.minikube:/home/amirkasseb/.minikube   sealed-secrets-rotator
+```
+
+
+![Docker SealedSecret Rotator Output](assets/docker-output.png)
 
 
 
