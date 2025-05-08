@@ -10,6 +10,7 @@ The SealedSecret Rotator automates the process of re-encrypting SealedSecret obj
 
 ## Table of Contents
 - [Features](#features)
+- [Project Structure](#project-structure)
 - [Background](#background)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -40,9 +41,36 @@ The SealedSecret Rotator automates the process of re-encrypting SealedSecret obj
 - Integrates with existing `kubeseal` CLI workflows.
 - Planned enhancements for JSON logging, concurrency, and secure key handling.
 
+
+
 ## Background
 
 Bitnami's SealedSecrets controller encrypts Kubernetes secrets using a public key, creating SealedSecret objects that can be safely stored in version control. The controller decrypts these objects within the cluster using a private key. By default, keys rotate every 30 days, requiring manual re-encryption of existing SealedSecrets. The SealedSecret Rotator automates this process, ensuring security and efficiency.
+
+
+## Project Structure
+
+```plaintext
+.
+├── assets/
+│   └── tool-output.png
+├── cmd/
+│   └── sealed-secrets-rotator.go
+├── go.mod
+├── go.sum
+├── Makefile
+└── README.md
+```
+
+This is the directory structure of the SealedSecret Rotator project:
+
+- `assets/`: Contains project assets such as images or other non-code files.
+- `cmd/`: Contains the main entry point for the application.
+    - `sealed-secrets-rotator.go`: The Go file that contains the logic for the SealedSecret Rotator.
+- `go.mod`: Go module file that defines the module and its dependencies.
+- `Makefile`: A file with commands to build, clean, and install the project. 
+- `README.md`: The markdown file that provides an overview of the project and how to use it.
+
 
 ## Installation
 
