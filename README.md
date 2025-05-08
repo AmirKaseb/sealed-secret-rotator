@@ -54,10 +54,11 @@ Bitnami's SealedSecrets controller encrypts Kubernetes secrets using a public ke
 ## Project Structure
 
 ```plaintext
-.
-├── assets/
-│   
-├── cmd/
+├── assets
+│   ├── logo.png
+│   ├── tool-output.png
+│   └── tool-output-video.gif
+├── cmd
 │   └── sealed-secrets-rotator.go
 ├── go.mod
 ├── go.sum
