@@ -56,7 +56,7 @@ Bitnami's SealedSecrets controller encrypts Kubernetes secrets using a public ke
 ```plaintext
 .
 ├── assets/
-│   └── tool-output.png
+│   
 ├── cmd/
 │   └── sealed-secrets-rotator.go
 ├── go.mod
