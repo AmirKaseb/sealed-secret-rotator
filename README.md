@@ -334,6 +334,8 @@ The SealedSecret Rotator extends the `kubeseal` CLI to automate re-encryption. T
 ### Accessing Private Keys
 - Query secrets labeled `sealedsecrets.bitnami.com/sealed-secrets-key` in the controller's namespace.
 - Use `kubectl get secret -n <namespace> -l <label> -o yaml` to fetch private keys.
+- The retrieved secret may contain multiple private keys, including historical ones. This allows for key rotation while maintaining compatibility.
+- kubeseal automatically selects the correct private key to decrypt each SealedSecret, matching it by the corresponding certificate.
 - Securely handle keys in memory to avoid exposure (see `getPrivateKeys()`).
 
 ### Decrypting SealedSecrets
