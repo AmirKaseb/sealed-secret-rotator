@@ -1,5 +1,10 @@
 <img src="assets/logo.png" alt="SealedSecret Rotator Logo" width="600"/>
 
+![Go Version](https://img.shields.io/badge/go-1.21+-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Build](https://github.com/AmirKaseb/sealed-secret-rotator/actions/workflows/docker-image.yml/badge.svg)
+
+
 # SealedSecret Rotator
 
 A command-line tool to automate the re-encryption of Kubernetes SealedSecrets after key rotation, built as an extension to the Bitnami `kubeseal` CLI. This project was developed as part of the `Instabug Infrastructure Internship Task 2025`.
@@ -138,7 +143,7 @@ Run the tool via the command line with configurable flags.
 
 ### Command
 ```bash
-sealed-secret-rotator [flags]
+sealedsecret-rotator [flags]
 ```
 
 ### Flags
@@ -315,6 +320,8 @@ Planned enhancements for the next version include:
       return buffer, nil
   }
   ```
+
+- Enhance error handling to simplify debugging and make it easier to identify and resolve issues.
 
 ## Challenges and Mitigations
 
