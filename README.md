@@ -126,6 +126,12 @@ If you prefer using Docker to run the SealedSecret Rotator without installing an
 
 This will start the SealedSecret Rotator in a Docker container, allowing you to interact with it without needing to install kubectl or kubeseal locally.
 
+- Alternatively, you can pull the latest image directly:
+
+```bash
+docker pull amirkasseb/sealed-secrets-rotator
+```
+
 ## Usage
 
 Run the tool via the command line with configurable flags.
