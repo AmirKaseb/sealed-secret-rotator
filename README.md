@@ -1,6 +1,6 @@
 <img src="assets/logo.png" alt="SealedSecret Rotator Logo" width="600"/>
 
-![Go Version](https://img.shields.io/badge/go-1.21+-brightgreen)
+![Go 1.16+](https://img.shields.io/badge/Go-1.16%2B-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Build](https://github.com/AmirKaseb/sealed-secret-rotator/actions/workflows/docker-image.yml/badge.svg)
 
