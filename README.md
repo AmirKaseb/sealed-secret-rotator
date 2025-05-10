@@ -18,15 +18,15 @@ The SealedSecret Rotator automates the process of re-encrypting SealedSecret obj
 
 ## Table of Contents
 - [Features](#features)
-- [Project Structure](#project-structure)
 - [Background](#background)
+- [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Usage](#usage)
   - [Command](#command)
   - [Flags](#flags)
   - [Example](#example)
-- [Implementation Details](#implementation-details)
-  - [Key Functions](#key-functions)
+- [Demo: Running in a Clean Kubernetes Environment](#demo-running-in-a-clean-kubernetes-environment)
+- [Key Functions](#key-functions)
 - [Future Improvements](#future-improvements)
 - [Challenges and Mitigations](#challenges-and-mitigations)
 - [Plan of Action](#plan-of-action)
@@ -179,6 +179,24 @@ docker run --rm -it   --network host   -v $HOME/.kube/config:/root/.kube/config 
 
 
 ![Docker SealedSecret Rotator Output](assets/docker-output.png)
+
+
+## Demo: Running in a Clean Kubernetes Environment
+
+To demonstrate that the `sealed-secrets-rotator` works reliably in a clean Kubernetes environment without depending on any local setup or cached configuration, a full demo was conducted using the [Killercoda Kubernetes Playground](https://killercoda.com/).
+
+The rotator was tested against a fresh cluster with:
+
+- A deployed **Bitnami SealedSecrets controller**.
+- **10 manually created SealedSecret objects**.
+- **No local development dependencies**.
+
+![SealedSecret KillerCoda Playground Demo](assets/playground-demo.gif)
+
+
+This confirms that the tool works **end-to-end** — identifying, decrypting, re-encrypting, and updating `SealedSecret` resources — using only the provided Docker image.
+
+
 
 
 
