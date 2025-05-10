@@ -350,7 +350,18 @@ Planned enhancements for the next version include:
 
 ## Plan of Action
 
-The SealedSecret Rotator extends the `kubeseal` CLI to automate re-encryption. The following steps detail the implementation, supported by the code above:
+> 💡 **Important Note:**  
+> Each step in this process—such as identifying SealedSecrets, fetching keys, decrypting, re-encrypting, and applying—could have been exposed as a separate command or flag.  
+> However, we chose to deliver this as a **fully automated end-to-end workflow** to reduce complexity for the user and better fit real-world operational needs where minimal manual intervention is preferred.
+
+
+- This flowchart outlines the steps involved in the SealedSecret rotation process, with upcoming enhancements planned for future improvements.
+
+![Sealed Secret Flowchart](assets/flowchart.png)
+
+
+The SealedSecret Rotator extends the `kubeseal` CLI to automate re-encryption. The following steps detail the implementation, supported by the code above in Key Functions Section :
+
 
 ### Identifying SealedSecrets
 - Use the Kubernetes API to list all SealedSecret objects across all namespaces.
@@ -372,6 +383,11 @@ The SealedSecret Rotator extends the `kubeseal` CLI to automate re-encryption. T
 ### Decrypting SealedSecrets
 - For each SealedSecret, use `kubeseal --recovery-unseal` with the corresponding private key.
 - Process the JSON output to extract the decrypted secret data (see `rotateSecret()`).
+
+> ⚠️ **Important Note:**  
+> While `kubeseal` provides a `--re-encrypt` option for rotating SealedSecrets, and using SealedSecrets as a long-term storage mechanism is not the recommended practice, our current approach intentionally decrypts and re-encrypts secrets to improve flexibility and better fit task-specific workflows.  
+> This is especially useful when modifying or inspecting secrets outside the cluster, or when restoring to a different environment.  
+> In future versions, we may adopt the `--re-encrypt` functionality to simplify this process while maintaining security and consistency.
 
 ### Re-encrypting Secrets
 - Use the latest public key to re-encrypt the decrypted secrets via `kubeseal --format=yaml --cert=<public-key>`.
