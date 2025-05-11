@@ -174,8 +174,26 @@ This processes all SealedSecrets in the cluster with verbose output.
 docker run --rm -it   --network host   -v $HOME/.kube/config:/root/.kube/config   -v $HOME/.minikube:/home/amirkasseb/.minikube   sealed-secrets-rotator
 ```
 
-
 ![Docker SealedSecret Rotator Output](assets/docker-output.png)
+
+#### Running Automatically with a Linux Cronjob
+
+
+To automate the SealedSecrets rotation every 30 days at the start of the month, you can set up a Linux cronjob. The following example runs the tool at 00:00 on the 1st day of every month
+
+1.  **Open the crontab editor:**
+    ```bash
+    crontab -e
+    ```
+    This will open your user's crontab file in a text editor.
+
+2.  **Add a cron job schedule:**
+    To run the SealedSecrets rotation at a specific interval, add a line to the crontab file. For example, to run it at 00:00 on the 1st day of every month, you would add:
+
+    ```cron
+    0 0 1 * * /usr/local/bin/sealedsecret-rotator --controller-name=sealed-secrets --controller-namespace=kube-system --verbose
+    ```
+    
 
 
 ## Demo: Running in a Clean Kubernetes Environment
